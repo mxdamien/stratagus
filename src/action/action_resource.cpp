@@ -1065,9 +1065,6 @@ bool COrder_Resource::WaitInDepot(CUnit &unit)
 			return false;
 		}
 	} else {
-		/// FIXME: Make it customizable
-		const unsigned int tooManyWorkers = 15;
-
 		CUnit *mine = this->Resource.Mine;
 		const int range = 15;
 		CUnit *newdepot = nullptr;
@@ -1077,7 +1074,7 @@ bool COrder_Resource::WaitInDepot(CUnit &unit)
 		if (unit.Player->AiEnabled && AiPlayer && AiPlayer->BuildDepots) {
 			// If the depot is overused, we need first to try to switch into another depot
 			// Use depot's ref counter for that
-			if (longWay || !mine || (depot->Refs > tooManyWorkers)) {
+			if (longWay || !mine || (depot->Refs > depot->Type->MaxWorkers)) {
 				newdepot = AiGetSuitableDepot(unit, *depot, &goal);
 				if (newdepot == NULL && longWay) {
 					// We need a new depot

@@ -955,6 +955,8 @@ static int CclDefineUnitType(lua_State *l)
 				type->CanStore[CclGetResourceByName(l)] = 1;
 				lua_pop(l, 1);
 			}
+		} else if (!strcmp(value, "MaxWorkers")) {
+			type->MaxWorkers = LuaToNumber(l, -1);
 		} else if (!strcmp(value, "CanCastSpell")) {
 			if (!lua_istable(l, -1)) {
 				LuaError(l, "incorrect argument");

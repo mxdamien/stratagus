@@ -536,7 +536,8 @@ CUnitType::CUnitType() :
 	CanAttack(0),
 	Neutral(0),
 	GivesResource(0), PoisonDrain(0), FieldFlags(0), MovementMask(0),
-	Sprite(NULL), ShadowSprite(NULL), ShadowSpriteFrame(0), ShadowScale(1)
+	Sprite(NULL), ShadowSprite(NULL), ShadowSpriteFrame(0), ShadowScale(1),
+	MaxWorkers(15)
 {
 #ifdef USE_MNG
 	memset(&Portrait, 0, sizeof(Portrait));

@@ -573,6 +573,7 @@ public:
 	int RandomMovementDistance;     /// Quantity of tiles to move randomly.
 	int ClicksToExplode;            /// Number of consecutive clicks until unit suicides.
 	int MaxOnBoard;                 /// Number of Transporter slots.
+	int MaxWorkers;                 /// Maximum number of assigned workers
 	int BoardSize;                  /// How much "cells" unit occupies inside transporter
 	int ButtonLevelForTransporter;  /// On which button level game will show units inside transporter
 	int StartingResources;          /// Amount of Resources on build
